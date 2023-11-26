@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="loader.css">
+        
+    <script src="loader.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="main">
+
+        <div class="col col-1">
+            <div class="logo">
+                <p><b>Broseey</b> </p>
+            </div>
+            <div class="year">
+                <p>2020-2023</p>
+                <object class="svg-class" type="image/svg+xml" data="./roundflow3.svg">
+                    Your browser does not support SVG
+                </object>
+            </div>
+        </div>
+
+        <div class="col col-2">
+            <div class="mydetail">
+                <P>
+                    The ability to create aesthetic stuff feels like a kinda superpower at least for Broseey. <br />
+                    He takes the UI/UX designer's code and gives an amazing fix to it, making it even more visually
+                    pleasing for the User as the User flows through the webpage. <br />
+                    Make no mistake He is no Designer, even if he has a good rapport with the designer's Figma, rather
+                    He is a CREATIVE FRONTEND DEVELOPER!
+                </P>
+                <br />
+                <br />
+                <p><u>Niche</u></p>
+                <p>
+                    Modern Web Development, Aesthetics,<br /> Frontend,
+                    Greensock Animation, Animations,<br /> Minimalism, Visual Development,code
+
+                </p>
+                <br />
+                <br />
+                <p><u>Contact</u></p>
+                <p> <a href="#"><b>Youtube</b></a></p>
+                <p> <a href="#"><b>Instagram</b></a></p>
+                <p> <a href="#"><b>Facebook</b></a></p>
+                <p> <a href="animatedcursor.html"><b>Gmail</b></a></p>
+            </div>
+
+            <div>
+                <p id="copyrights">copyright &copy; All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <div class="btn-outline btn-outline-1">
+        <p id="menu" class="hover-this"><b>VIEW HUB</b></p>
+        <div class="cursor"></div>
+    </div>
+    <div class="btn-outline btn-outline-2"></div>
+    <div class="rotating-circle color-button" onclick="rotateAndChangeColor()">
+        <!-- <img width="100" height="100" src="https://img.icons8.com/ios-filled/100/423828/color-mode.png"
+            alt="color-mode" /> -->
+            <img src="./nighticon.png" alt="">
+    </div>
+</div>
+
+<div class="side-menu">
+    <div class="side-menu-projects">
+        <p><a href="#">Projects</a></p>
+    </div>
+    <div class="side-menu-skills">
+        <p><a href="#">Skills</a></p>
+    </div>
+</div>
+
+
+    <div class="images">
+        <img class="img1" src="./broselookgood.jpg" alt="Img 1" />
+        <img class="img2" src="./broselookgood.jpg" alt="Img 2" />
+    </div>
+
+    <canvas id="draw"></canvas>
+
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-1 bar"></div>
+            <div class="loader-2 bar"></div>
+        </div>
+
+        <div class="name"><span class="names">AMBROSE</span></div>
+        
+        <div class="counter">
+            <div class="counter-1 digit">
+                <div class="num">0</div>
+                <div class="num num1offset1">1</div>
+            </div>
+            <div class="counter-2 digit">
+                <div class="num">0</div>
+                <div class="num num1offset2">1</div>
+                <div class="num">2</div>
+                <div class="num">3</div>
+                <div class="num">4</div>
+                <div class="num">5</div>
+                <div class="num">6</div>
+                <div class="num">7</div>
+                <div class="num">8</div>
+                <div class="num">9</div>
+                <div class="num">0</div>
+            </div>
+            <div class="counter-3 digit">
+                <div class="num">0</div>
+                <div class="num">1</div>
+                <div class="num">2</div>
+                <div class="num">3</div>
+                <div class="num">4</div>
+                <div class="num">5</div>
+                <div class="num">6</div>
+                <div class="num">7</div>
+                <div class="num">8</div>
+                <div class="num">9</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script> -->
+        <script src="hoverdistortion.js"></script>
+        <script>
+            Array.from(document.querySelectorAll('.images')).forEach((el) => {
+                const imgs = Array.from(el.querySelectorAll('img'));
+                new hoverEffect({
+                    parent: el,
+                    intensity: 0.2,
+                    image1: imgs[0].getAttribute('src'),
+                    image2: imgs[1].getAttribute('src'),
+                    displacementImage: './distortionimage.jpg',
+                });
+            });
+        </script>
+
+        <script src="colorChange.js"></script>
+
+        <script>
+            (function () {
+                const cursor = document.querySelector('.cursor');
+
+
+                const editCursor = e => {
+                    const { clientX: x, clientY: y } = e;
+                    cursor.style.left = x + 'px';
+                    cursor.style.top = y + 'px';
+                };
+
+                window.addEventListener('mousemove', editCursor);
+            })();
+        </script>
+        
+        <script src="canvasscript.js"></script>
+    <script>
+    
+        document.addEventListener("DOMContentLoaded", function() 
+        {
+            const counter3 = document.querySelector(".counter-3");
+
+            for(let i = 0; i < 2; i++) {
+                for (let j = 0; j <10; j++) {
+                    const div = document.createElement("div");
+                    div.className = "num";
+                    div.textContent = j;
+                    counter3.appendChild(div);
+                }
+            }
+
+            const finalDiv = document.createElement("div");
+            finalDiv.className = "num";
+            finalDiv.textContent = "0";
+            counter3.appendChild(finalDiv);
+
+            function animate(counter, duration, delay = 0) {
+                const numHeight = counter.querySelector(".num").clientHeight;
+                const totalDistance = 
+                (counter.querySelectorAll(".num").length - 1) * numHeight;
+
+                gsap.to(counter, {
+                    y: -totalDistance,
+                    duration: duration,
+                    delay: delay,
+                    ease: "power2.inOut" ,
+                });
+            }
+
+            animate(counter3, 5);
+            animate(document.querySelector(".counter-2"), 6);
+            animate(document.querySelector(".counter-1"), 2, 4);
+        });
+
+        gsap.to(".digit", {
+            top: "-150px",
+            stagger: {
+                amount: 0.25,
+            },
+            delay: 6,
+            duration: 1,
+            ease: "power4.inOut",
+        });
+
+        gsap.from(".loader-1", {
+            width: 0,
+            duration: 6,
+            ease: "power2.in0ut",
+        });
+
+        gsap.from(".loader-2", {
+            width: 0,
+            delay: 1.9,
+            duration: 2,
+            ease: "power2.in0ut",
+        });
+
+        gsap.to(".loader", {
+            background: 'none',
+            delay: 6,
+            duration:0.1,
+        });
+
+         gsap.to(".name", {
+                opacity: 0,
+                duration: 1,
+                delay:5,
+                left: "50%",
+                y: 80,
+                ease: "power4.inOut",
+                stagger: { amount: 0.1, }
+        });
+
+        gsap.to(".loader-1", {
+            rotation: 90,
+            y: -50,
+            duration: 0.5,
+            delay: 6,
+        });
+
+        gsap.to(".loader-2", {
+            x: -75,
+            y: 75,
+            duration:0.5,
+        },
+        "<"
+        );
+
+        gsap.to(".loader", {
+            scale: 40,
+            duration: 1,
+            delay:7,
+            ease: "power2.inOut"
+        });
+
+        gsap.to(".loader", {
+            rotation: 45,
+            y: 500,
+            x: 2000,
+            duration:1,
+            delay:7,
+            ease: "power2.inOut",
+            // onComplete: showName,
+        });
+
+        gsap.to(".loading-screen", {
+            opacity: 0,
+            duration: 0.5,
+            delay: 7.5,
+            ease: "power1.inOut",
+            onComplete: showElements,
+        });
+        
+        
+            gsap.fromTo(".mydetail p",
+                {
+                    // Starting values
+                    opacity: 0,
+                    y: 10
+                },
+                {
+                    // Ending values and additional properties
+                    delay:8,
+                    opacity: 1,
+                    y: 0,
+                    stagger:0.1,
+                    duration: 0.6, // Animation duration in seconds
+                    ease: "power2.out" // Easing function
+                }
+            );
+        
+
+            gsap.from(".side-menu,.btn-outline,.logo, .year",{
+                opacity:0,
+                duration:0.5,
+                ease:"power2.inOut",
+                delay:7.5,
+                // stagger:0.1,
+            });
+
+        //   function showName() {
+        //         gsap.to(".name", {
+        //             // opacity: 0,
+        //             duration: 1,
+        //             left:"50%",
+        //             y:-80,
+        //             paddingTop:'300px',
+        //             ease: "power4.inOut",
+        //             stagger: {amount: 0.1,}
+        //         });
+        //     }
+        
+            function showElements() {
+                    // Remove the "hidden" class from elements to show them
+                    document.querySelector(".container").classList.remove("hidden");
+                    document.querySelector("#draw").classList.remove("hidden");
+                    document.querySelector(".side-menu").classList.remove("hidden");
+                }
+    </script>
+</body>
+</html>
